@@ -197,3 +197,45 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
         4. Run and apply migrations
         (venv3931) λ python manage.py makemigrations
         (venv3931) λ python manage.py migrate
+
+
+#### 03.4 Creating Category model for product
+
+        Aktivities:
+
+        1. Modifies
+        modified:   README.md
+
+        2. Create Category model
+        modified:   app/product/models.py
+        # MODEL: Category
+        class Category(models.Model):
+         STATUS = (
+         ('True', 'True'),
+         ('False', 'False'),
+         )
+         parent      = models.ForeignKey('self',blank=True, null=True ,related_name='children', on_delete=models.CASCADE)
+         title       = models.CharField(max_length=30)
+         keywords    = models.CharField(max_length=255)
+         description = models.CharField(max_length=255)
+         image       = models.ImageField(blank=True,upload_to='images/')
+         status      = models.CharField(max_length=10, choices=STATUS)
+         slug        = models.SlugField()
+         create_at   = models.DateTimeField(auto_now_add=True)
+         update_at   = models.DateTimeField(auto_now=True)
+
+         class Meta:
+         verbose_name_plural = 'Categories'
+
+         def __str__(self):
+         return self.title
+
+        3. Run and apply migrations 
+        new file:   app/product/migrations/0001_initial.py
+
+        4. Register Category model
+        modified:   app/product/admin.py
+        
+        
+
+
