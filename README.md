@@ -471,3 +471,32 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
         5. Testing:
         5.1 Added some products to Product table
         5.2 Added some images to Images table
+
+
+#### 03.14 Using mark_safe to show image
+
+        Aktivities:
+
+        1. Modifies
+        modified:   README.md
+
+        2. Add mark_safe to Product table
+        modified:   app/product/models.py
+
+        # Showing product image in admin panel
+        def image_tag(self):
+            return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
+
+        image_tag.short_description = 'Image'
+
+        3. Add image_tag method in ProductAdmin model admin
+        modified:   app/product/admin.py
+
+        list_display = ['title','category', 'status', 'image_tag'] # image_tag to show product image in admin panel
+
+        # readonly_fields is showing an image (just like an icon) in 
+        # the field image of Product table, when to updating a product
+        readonly_fields = ('image_tag',)
+
+        NOTE: At last it works, after almost a full day debuging this error 
+

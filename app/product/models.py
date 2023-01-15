@@ -3,6 +3,7 @@
 # Import django modules
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.utils.safestring import mark_safe
 
 # MODEL: Category
 class Category(models.Model):
@@ -45,6 +46,12 @@ class Product(models.Model):
     status 		= models.CharField(max_length=10,choices=STATUS)
     create_at 	= models.DateTimeField(auto_now_add=True)
     update_at 	= models.DateTimeField(auto_now=True)
+
+    # Showing product image in admin panel
+    def image_tag(self):
+        return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
+
+    image_tag.short_description = 'Image'
 
     def __str__(self):
         return self.title

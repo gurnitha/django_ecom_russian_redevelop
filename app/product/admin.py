@@ -17,8 +17,11 @@ class CategoryAdmin(admin.ModelAdmin):
 # ModelAdmin:ProductAdmin
 # Customizing Product table display in admin panel
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['title','category', 'status']
+    list_display = ['title','category', 'status', 'image_tag'] # image_tag to show product image in admin panel
     list_filter = ['category']
+    # readonly_fields is showing an image (just like an icon) in 
+    # the field image of Product table, when to updating a product
+    readonly_fields = ('image_tag',) 
 
 # Register models
 admin.site.register(Category, CategoryAdmin)
