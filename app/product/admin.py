@@ -14,6 +14,13 @@ class CategoryAdmin(admin.ModelAdmin):
     list_filter = ['status']
 
 
+# Defining ProductImageInline class 
+# to show more image fields in Product table
+# when creating or udating a product
+class ProductImageInline(admin.TabularInline):
+    model = Images
+    extra = 5
+
 # ModelAdmin:ProductAdmin
 # Customizing Product table display in admin panel
 class ProductAdmin(admin.ModelAdmin):
@@ -22,6 +29,7 @@ class ProductAdmin(admin.ModelAdmin):
     # readonly_fields is showing an image (just like an icon) in 
     # the field image of Product table, when to updating a product
     readonly_fields = ('image_tag',) 
+    inlines = [ProductImageInline] # Apply the ProductImageInline class
 
 # Register models
 admin.site.register(Category, CategoryAdmin)

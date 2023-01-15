@@ -500,3 +500,24 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
 
         NOTE: At last it works, after almost a full day debuging this error 
 
+
+#### 03.15 Creating ProductImageInline class in admin
+
+        Aktivities:
+
+        1. Modifies
+        modified:   README.md
+
+        2. Defining ProductImageInline
+        modified:   app/product/admin.py
+
+        # Defining ProductImageInline class 
+        # to show more image fields in Product table
+        # when creating or udating a product
+        class ProductImageInline(admin.TabularInline):
+            model = Images
+            extra = 5
+
+        class ProductAdmin(admin.ModelAdmin):
+        ...
+        inlines = [ProductImageInline] # Apply the ProductImageInline class
