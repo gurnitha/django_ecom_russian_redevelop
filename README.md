@@ -353,3 +353,17 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
 
         3. Run and apply migrations 
         new file:   app/product/migrations/0003_product_category.py
+
+
+#### 03.10 Add some items to products
+
+        Aktivities:
+
+        1. Modifies
+        modified:   README.md
+
+        2. Add product belongs to parent category
+        new file:   uploads/images/product/elecktronics.png
+
+        3. Add product belongs to category
+        new file:   uploads/images/product/hp_laptop.jpg
