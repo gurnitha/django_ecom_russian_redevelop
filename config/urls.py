@@ -5,7 +5,14 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    
+    # home
     path('', include('app.home.urls', namespace='home')),
+
+    # ckeditor
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+
+    # admin
     path('admin/', admin.site.urls),
 ]
 

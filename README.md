@@ -367,3 +367,59 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
 
         3. Add product belongs to category
         new file:   uploads/images/product/hp_laptop.jpg
+
+
+#### 03.11 Install django-ckeditor for product descrition field
+
+        Aktivities:
+
+        1. Modifies
+        modified:   README.md
+
+        2. Install ckeditor
+        (venv3931) λ pip install django-ckeditor
+
+        3. Install pillow for images
+        (venv3931) λ pip install pillow
+
+        4. Configure ckeditor in settings.py
+        modified:   config/settings.py
+
+        4.1 Register ckeditor in INSTALLED_APPS
+        'ckeditor',
+
+        4.2 Configure ckeditor
+
+         ####################################
+         ##  CKEDITOR CONFIGURATION ##
+         ####################################
+
+         SITE_ID = 1
+
+         CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
+         CKEDITOR_UPLOAD_PATH = 'images/'
+         CKEDITOR_IMAGE_BACKEND = "pillow"
+
+         CKEDITOR_CONFIGS = {
+             'default': {
+                 'toolbar': None,
+             },
+         }
+
+         ###################################
+
+        5. Configur ckeditor path
+        modified:   config/urls.py 
+
+        6. Import and dse ckeditor in Product model       
+        modified:   app/product/models.py
+        from ckeditor_uploader.fields import RichTextUploadingField
+        detail      = RichTextUploadingField()
+
+        7. Testing add some text and image in detail
+           field of the Product table 
+           Result: Path of ckeditor: year/month/date
+        new file:   uploads/images/2023/01/15/acer_c27.jpg
+        new file:   uploads/images/2023/01/15/acer_c27_thumb.jpg
+
