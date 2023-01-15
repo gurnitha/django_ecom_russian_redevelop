@@ -131,3 +131,27 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
         
         5. Include or register home/urls.py 
         modified:   config/urls.py
+
+
+
+## Video 03. - Creating Product App and Model
+
+
+#### 03.1 Create a new app 'product'
+
+        Activities:
+
+        1. Create folder 
+        (venv3931) λ mkdir app\product
+
+        2. Create product app
+        (venv3931) λ django-admin startapp product app\product
+
+        modified:   README.md
+        new file:   app/product/__init__.py
+        new file:   app/product/admin.py
+        new file:   app/product/apps.py
+        new file:   app/product/migrations/__init__.py
+        new file:   app/product/models.py
+        new file:   app/product/tests.py
+        new file:   app/product/views.py
