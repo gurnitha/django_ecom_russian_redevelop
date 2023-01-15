@@ -46,3 +46,21 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
         new file:   config/wsgi.py
         new file:   manage.py
 
+
+#### 01.3 Create django app 'app/home' 
+
+        Activities:
+
+        1. (venv3931) λ mkdir app\home
+           Create directories
+        2. (venv3931) λ django-admin startapp home app\home
+           Create django app named 'home' in app directory
+
+        modified:   README.md
+        new file:   app/home/__init__.py
+        new file:   app/home/admin.py
+        new file:   app/home/apps.py
+        new file:   app/home/migrations/__init__.py
+        new file:   app/home/models.py
+        new file:   app/home/tests.py
+        new file:   app/home/views.py
