@@ -267,5 +267,19 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
          urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
+#### 03.6 From admin panel create parent category + image, child category + image 
+
+        Aktivities:
+
+        1. Modifies
+        modified:   README.md
+
+        2. Creaete parent category
+        new file:   uploads/images/chips.jpg
+
+        3. Create child category
+        new file:   uploads/images/desktop.jpg
+
+
 
 
