@@ -4,7 +4,7 @@
 from django.contrib import admin
 
 # Import from locals
-from app.product.models import Category
+from app.product.models import Category, Product
 
 
 # ModelAdmin:CategoryAdmin
@@ -15,3 +15,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 # Register models
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Product)

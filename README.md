@@ -281,7 +281,7 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
         new file:   uploads/images/desktop.jpg
 
 
-#### 03.7. Create CategoryAdmin model to customizing Category table display in admin panel
+#### 03.7 Create CategoryAdmin model to customizing Category table display in admin panel
 
         Aktivities:
 
@@ -298,3 +298,44 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
 
          # Register models
          admin.site.register(Category, CategoryAdmin)
+
+
+#### 03.8 Create Product model
+
+        Aktivities:
+
+        1. Modifies
+        modified:   README.md
+
+        2. Create Product model
+        modified:   app/product/models.py
+        class Product(models.Model):
+          STATUS = (
+              ('True', 'True'),
+              ('False', 'False'),
+          )
+          title      = models.CharField(max_length=150)
+          keywords   = models.CharField(max_length=255)
+          description = models.CharField(max_length=255)
+          image      = models.ImageField(blank=True,upload_to='images/product/')
+          price      = models.FloatField()
+          amount     = models.IntegerField()
+          minamount  = models.IntegerField()
+          detail     = models.TextField()
+          slug       = models.SlugField()
+          status     = models.CharField(max_length=10,choices=STATUS)
+          create_at  = models.DateTimeField(auto_now_add=True)
+          update_at  = models.DateTimeField(auto_now=True)
+
+          def __str__(self):
+              return self.title
+
+        3. Run and apply migrations
+        new file:   app/product/migrations/0002_product_alter_category_options_alter_category_image.py
+
+        4. Register Product model to admin
+        modified:   app/product/admin.py
+
+        5. Renamed upload files in Category
+        renamed:    uploads/images/chips.jpg -> uploads/images/category/chips.jpg
+        renamed:    uploads/images/desktop.jpg -> uploads/images/category/desktop.jpg
