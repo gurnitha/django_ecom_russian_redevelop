@@ -423,3 +423,19 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
         new file:   uploads/images/2023/01/15/acer_c27.jpg
         new file:   uploads/images/2023/01/15/acer_c27_thumb.jpg
 
+
+#### 03.12 Create ProductAdmin model to customizing Product table display in admin panel
+
+        Aktivities:
+
+        1. Modifies
+        modified:   README.md
+
+        2. Customizing admin
+        modified:   app/product/admin.py
+
+         # ModelAdmin:ProductAdmin
+         # Customizing Product table display in admin panel
+         class ProductAdmin(admin.ModelAdmin):
+             list_display = ['title','category', 'status']
+             list_filter = ['category']
