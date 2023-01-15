@@ -155,3 +155,17 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
         new file:   app/product/models.py
         new file:   app/product/tests.py
         new file:   app/product/views.py
+
+
+#### 03.2 Register product app to config
+
+        Aktivities:
+
+        1. Mofified it
+        modified:   README.md
+
+        2. Rename the name of the app
+        modified:   app/product/apps.py
+
+        3. Register the app
+        modified:   config/settings.py
