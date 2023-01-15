@@ -1,3 +1,7 @@
+# app/home/views.py
 from django.shortcuts import render
 
-# Create your views here.
+
+# VIEWS: index
+def home_page(request):
+    return render(request,'index.html')

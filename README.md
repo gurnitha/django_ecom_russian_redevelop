@@ -79,3 +79,55 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
            'app.home.apps.HomeConfig',
         4. Testing run the server
            (venv3931) λ python manage.py runserver
+
+
+
+## Video 02. - Templeting
+
+
+#### 02.1 Adding and loading html templates
+
+
+        1. Add static files
+        new file:   app/home/static/css/bootstrap.min.css
+        ...
+        new file:   app/home/static/js/slick.min.js
+        
+        2. Craete homepage 
+        new file:   app/home/templates/content.html
+        new file:   app/home/templates/footer.html
+        new file:   app/home/templates/header.html
+        new file:   app/home/templates/homebase.html
+        new file:   app/home/templates/index.html
+        new file:   app/home/templates/sidebar.html
+        new file:   app/home/templates/slider.html
+        
+        3. Create urls 
+        new file:   app/home/urls.py
+        # app/home/urls.py
+
+           # Import django modules
+           from django.urls import path
+
+           # Import from loclas
+           from app.home import views
+
+           # Add app name
+           app_name = 'home'
+
+           urlpatterns = [
+           path('', views.index, name='index'),
+           ]
+
+        4. Defining home_page view method
+        modified:   app/home/views.py
+
+           from django.shortcuts import render
+
+
+           # VIEWS: index
+           def home_page(request):
+           return render(request,'index.html')
+        
+        5. Include or register home/urls.py 
+        modified:   config/urls.py
