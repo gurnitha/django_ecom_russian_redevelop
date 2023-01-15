@@ -439,3 +439,35 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
          class ProductAdmin(admin.ModelAdmin):
              list_display = ['title','category', 'status']
              list_filter = ['category']
+
+
+#### 03.13 Create Images model with OneTOMany relationship with Product model
+
+        Aktivities:
+
+        1. Modifies
+        modified:   README.md
+
+        2. Create Images Model
+        modified:   app/product/models.py
+
+        class Images(models.Model):
+          product = models.ForeignKey(Product,on_delete=models.CASCADE)
+          title   = models.CharField(max_length=50,blank=True)
+          image   = models.ImageField(blank=True, upload_to='images/product/')
+
+          class Meta:
+              verbose_name_plural = 'Images'
+
+          def __str__(self):
+              return self.title
+
+        3. Run and apply migrations
+        new file:   app/product/migrations/0004_alter_product_detail_images.py
+
+        4. Register Images model to admin
+        modified:   app/product/admin.py
+
+        5. Testing:
+        5.1 Added some products to Product table
+        5.2 Added some images to Images table
