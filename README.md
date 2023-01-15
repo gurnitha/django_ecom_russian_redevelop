@@ -339,3 +339,17 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
         5. Renamed upload files in Category
         renamed:    uploads/images/chips.jpg -> uploads/images/category/chips.jpg
         renamed:    uploads/images/desktop.jpg -> uploads/images/category/desktop.jpg
+
+
+#### 03.9 Add OneToMany relationship between Category model and Product model
+
+        Aktivities:
+
+        1. Modifies
+        modified:   README.md
+        
+        2. Add OneToMany relationship Category and Product model
+        modified:   app/product/models.py       
+
+        3. Run and apply migrations 
+        new file:   app/product/migrations/0003_product_category.py
