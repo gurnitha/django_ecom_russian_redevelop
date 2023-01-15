@@ -281,5 +281,20 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
         new file:   uploads/images/desktop.jpg
 
 
+#### 03.7. Create CategoryAdmin model to customizing Category table display in admin panel
 
+        Aktivities:
 
+        1. Modifies
+        modified:   README.md
+
+        2. Customizing the admin panel
+        modified:   app/product/admin.py
+        # ModelAdmin:CategoryAdmin
+         # Customizing Category table display in admin panel
+         class CategoryAdmin(admin.ModelAdmin):
+             list_display = ['title','parent', 'status']
+             list_filter = ['status']
+
+         # Register models
+         admin.site.register(Category, CategoryAdmin)
