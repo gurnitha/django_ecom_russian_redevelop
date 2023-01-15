@@ -64,3 +64,18 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
         new file:   app/home/models.py
         new file:   app/home/tests.py
         new file:   app/home/views.py
+
+
+#### 01.4 Register django home to config
+
+        Activities:
+
+        1. modified:   README.md
+        2. modified:   app/home/apps.py
+           Rename the app: 
+           from name = 'home' to name = 'app.home'
+        3. modified:   config/settings.py
+           Register the app in INSTALLED_APPS:  
+           'app.home.apps.HomeConfig',
+        4. Testing run the server
+           (venv3931) λ python manage.py runserver
