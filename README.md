@@ -169,3 +169,31 @@ Mysql: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
 
         3. Register the app
         modified:   config/settings.py
+
+
+#### 03.3 Create MySQL database 
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Create db
+        mysql - u root -p
+        mysql> create database django_ecom_russian_redevelop;
+
+        3. Connect the db with the project
+        modified:   config/settings.py
+        DATABASES = {
+         'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'django_ecom_russian_redevelop',
+         'USER': 'root',
+         'PASSWORD': 'root',
+         'HOST': 'localhost',
+         }
+        }
+
+        4. Run and apply migrations
+        (venv3931) λ python manage.py makemigrations
+        (venv3931) λ python manage.py migrate
